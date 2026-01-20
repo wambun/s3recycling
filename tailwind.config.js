@@ -16,19 +16,70 @@ module.exports = {
   darkMode: ['class'],
   theme: {
     extend: {
+      // Logis Typography Scale
+      fontSize: {
+        // Display sizes (responsive)
+        'display-xl': ['100px', { lineHeight: '1', letterSpacing: '-0.02em' }],
+        'display-lg': ['74px', { lineHeight: '1', letterSpacing: '-0.02em' }],
+        'display-md': ['52px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-sm': ['36px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        // Section headings
+        'heading-xl': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'heading-lg': ['36px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'heading-md': ['30px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'heading-sm': ['24px', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        // Body text
+        'body-lg': ['18px', { lineHeight: '1.5' }],
+        'body-md': ['16px', { lineHeight: '1.5' }],
+        'body-sm': ['14px', { lineHeight: '1.5' }],
+      },
       lineHeight: {
+        tight: '1',
+        snug: '1.1',
+        normal: '1.2',
+        relaxed: '1.5',
         11: '2.75rem',
         12: '3rem',
         13: '3.25rem',
         14: '3.5rem',
       },
+      letterSpacing: {
+        tighter: '-0.02em',
+        tight: '-0.01em',
+      },
       fontFamily: {
-        sans: ['var(--font-space-default)', ...fontFamily.sans],
-        display: ['var(--font-space-display)', ...fontFamily.sans],
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+        display: ['var(--font-display)', ...fontFamily.sans],
         cursive: ['cursive'],
       },
+      // Logis Spacing System
+      spacing: {
+        '18': '4.5rem',    // 72px
+        '22': '5.5rem',    // 88px
+        '26': '6.5rem',    // 104px
+        '30': '7.5rem',    // 120px
+        '34': '8.5rem',    // 136px
+        '38': '9.5rem',    // 152px
+        '42': '10.5rem',   // 168px
+        '46': '11.5rem',   // 184px
+        '50': '12.5rem',   // 200px
+      },
+      // Logis Container
+      maxWidth: {
+        'container': '1380px',
+        'content': '1200px',
+        'narrow': '800px',
+      },
+      // Logis Border Radius
+      borderRadius: {
+        'logis': '10px',
+        'logis-lg': '12px',
+        'logis-xl': '16px',
+      },
       colors: {
+        // Primary - S3 Green
         primary: {
+          50: '#f0fdf4',
           100: customColors.primary.lighter,
           200: customColors.primary.lighter,
           300: customColors.primary.light,
@@ -38,8 +89,11 @@ module.exports = {
           700: customColors.primary.dark,
           800: customColors.primary.dark,
           900: customColors.primary.darker,
+          DEFAULT: customColors.primary.main,
         },
+        // Secondary - S3 Blue
         secondary: {
+          50: '#f0f9ff',
           100: customColors.secondary.lighter,
           200: customColors.secondary.lighter,
           300: customColors.secondary.light,
@@ -49,7 +103,23 @@ module.exports = {
           700: customColors.secondary.dark,
           800: customColors.secondary.dark,
           900: customColors.secondary.darker,
+          DEFAULT: customColors.secondary.main,
         },
+        // Accent - Yellow highlight
+        'accent-yellow': {
+          light: customColors.accent.light,
+          DEFAULT: customColors.accent.main,
+          dark: customColors.accent.dark,
+        },
+        // Logis specific colors
+        'logis-bg': customColors.logis.background,
+        'logis-dark': customColors.logis.dark,
+        'logis-text': customColors.logis.textPrimary,
+        'logis-text-secondary': customColors.logis.textSecondary,
+        'logis-text-muted': customColors.logis.textMuted,
+        'logis-border': customColors.logis.border,
+        'logis-link': customColors.logis.link,
+        // Shadcn colors
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: customColors.primary.dark,

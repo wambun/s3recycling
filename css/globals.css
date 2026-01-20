@@ -4,54 +4,76 @@
 
 @layer base {
   :root {
+    /* Logis Design System Variables */
     --hard-shadow: 0px 29px 52px 0px rgba(0, 0, 0, 0.4),
       22px 25px 16px 0px rgba(0, 0, 0, 0.2);
     --hard-shadow-left: 0px 29px 52px 0px rgba(0, 0, 0, 0.4),
       -22px 25px 16px 0px rgba(0, 0, 0, 0.2);
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+
+    /* Logis Colors */
+    --logis-bg: #f9f9f9;
+    --logis-dark: #1e1e1e;
+    --logis-text: #1e1e1e;
+    --logis-text-secondary: #6f6f6f;
+    --logis-text-muted: #999999;
+    --logis-border: #e5e5e5;
+    --logis-link: #0099ff;
+    --logis-highlight: #fdd36d;
+
+    /* Shadcn Variables */
+    --background: 0 0% 97.6%; /* #f9f9f9 */
+    --foreground: 0 0% 11.8%; /* #1e1e1e */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 0 0% 11.8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --popover-foreground: 0 0% 11.8%;
+    --primary: 142 76% 36%; /* S3 Green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 89% 48%; /* S3 Blue */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 43.5%; /* #6f6f6f */
+    --accent: 45 97% 71%; /* Logis Yellow */
+    --accent-foreground: 0 0% 11.8%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --radius: 0.5rem;
+    --border: 0 0% 89.8%; /* #e5e5e5 */
+    --input: 0 0% 89.8%;
+    --ring: 142 76% 36%;
+    --radius: 10px; /* Logis border radius */
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 0 0% 98%;
+    --background: 0 0% 11.8%; /* #1e1e1e */
+    --foreground: 0 0% 97.6%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 97.6%;
+    --popover: 0 0% 11.8%;
+    --popover-foreground: 0 0% 97.6%;
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 89% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 45 97% 71%;
+    --accent-foreground: 0 0% 11.8%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 142 76% 45%;
   }
 
   *,
   ::before,
   ::after {
-    @apply border-gray-100 dark:border-neutral-800;
+    @apply border-logis-border dark:border-neutral-800;
+  }
+
+  /* Logis Typography */
+  html {
+    @apply text-body-md text-logis-text antialiased;
   }
 
   h1,
@@ -60,7 +82,33 @@
   h4,
   h5,
   h6 {
-    @apply font-semibold font-display;
+    @apply font-display font-medium tracking-tighter;
+  }
+
+  h1 {
+    @apply text-display-md md:text-display-lg lg:text-display-xl;
+  }
+
+  h2 {
+    @apply text-heading-lg md:text-heading-xl;
+  }
+
+  h3 {
+    @apply text-heading-md;
+  }
+
+  h4 {
+    @apply text-heading-sm;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
   }
 }
 

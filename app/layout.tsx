@@ -1,4 +1,4 @@
-import { Nunito_Sans } from 'next/font/google';
+import { Urbanist, Inter } from 'next/font/google';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
@@ -9,16 +9,20 @@ import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
 import { AnalyticsWrapper } from '@/components/shared/Analytics';
 
-const displayFont = Nunito_Sans({
+// Primary display font - Urbanist (from Logis template)
+const displayFont = Urbanist({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-space-display',
+  variable: '--font-display',
+  weight: ['400', '500', '600', '700', '900'],
 });
 
-const baseFont = Nunito_Sans({
+// Body font - Inter (fallback from Logis template)
+const baseFont = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-space-default',
+  variable: '--font-sans',
+  weight: ['400', '500', '600', '700'],
 });
 
 const globalColors = colors;
@@ -79,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.language}
-      className={`${baseFont.variable} ${displayFont.variable} scroll-smooth`}
+      className={`${baseFont.variable} ${displayFont.variable} font-sans scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
@@ -129,7 +133,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
 
-      <body className="flex flex-col bg-white text-black antialiased dark:bg-gray-950 dark:text-white min-h-screen">
+      <body className="flex flex-col bg-logis-bg text-logis-text antialiased dark:bg-logis-dark dark:text-white min-h-screen">
         <ThemeProviders>
           <AnalyticsWrapper />
 
