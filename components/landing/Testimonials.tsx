@@ -10,7 +10,7 @@ const Testimonials = () => {
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl" />
 
-      <div className="max-w-container mx-auto px-5 md:px-10 relative">
+      <div className="w-full px-6 md:px-12 lg:px-20 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

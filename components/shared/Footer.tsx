@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-logis-dark text-white">
       {/* Main Footer */}
-      <div className="max-w-container mx-auto px-5 md:px-10 py-16 md:py-20">
+      <div className="w-full px-6 md:px-12 lg:px-20 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -109,7 +109,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
-        <div className="max-w-container mx-auto px-5 md:px-10 py-6">
+        <div className="w-full px-6 md:px-12 lg:px-20 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
               &copy; {currentYear} S3 Recycling Solutions. All rights reserved.

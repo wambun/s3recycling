@@ -95,7 +95,7 @@ const StatsSection = () => {
         />
       </div>
 
-      <div className="max-w-container mx-auto px-5 md:px-10 relative">
+      <div className="w-full px-6 md:px-12 lg:px-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

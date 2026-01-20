@@ -45,7 +45,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="max-w-container mx-auto px-5 md:px-10 py-20 md:py-28 lg:py-32 relative">
+      <div className="w-full px-6 md:px-12 lg:px-20 py-20 md:py-28 lg:py-32 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <motion.div

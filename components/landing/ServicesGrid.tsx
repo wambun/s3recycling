@@ -26,7 +26,7 @@ const ServicesGrid = () => {
 
   return (
     <section className="py-24 md:py-32 bg-white">
-      <div className="max-w-container mx-auto px-5 md:px-10">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

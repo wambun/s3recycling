@@ -14,8 +14,8 @@ const clientTypes = [
 
 const ClientLogos = () => {
   return (
-    <section className="py-16 md:py-20 bg-white border-y border-logis-border">
-      <div className="max-w-container mx-auto px-5 md:px-10">
+    <section className="py-16 md:py-20 bg-white border-y border-gray-100">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

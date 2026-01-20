@@ -29,7 +29,7 @@ const CTASection = () => {
         />
       </div>
 
-      <div className="max-w-container mx-auto px-5 md:px-10 relative">
+      <div className="w-full px-6 md:px-12 lg:px-20 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <motion.div
