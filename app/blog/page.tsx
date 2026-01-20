@@ -4,6 +4,7 @@ import Footer from '@/components/shared/Footer';
 import Link from 'next/link';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { blogPosts } from '@/data/blog';
+import BlogImagePlaceholder from '@/components/shared/BlogImagePlaceholder';
 
 export const metadata: Metadata = {
   title: 'News & Blog | S3 Recycling Solutions',
@@ -54,9 +55,9 @@ export default function BlogPage() {
               className="group block bg-logis-bg rounded-logis-lg overflow-hidden hover:shadow-lg transition-all"
             >
               <div className="grid md:grid-cols-2 gap-8">
-                {/* Image Placeholder */}
-                <div className="aspect-video md:aspect-auto bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <span className="text-6xl">📰</span>
+                {/* Image */}
+                <div className="aspect-video md:aspect-auto min-h-[300px]">
+                  <BlogImagePlaceholder category={featuredPost.category} size="lg" />
                 </div>
 
                 {/* Content */}
@@ -104,9 +105,9 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   className="group block bg-white rounded-logis-lg overflow-hidden hover:shadow-lg transition-all"
                 >
-                  {/* Image Placeholder */}
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <span className="text-4xl">📄</span>
+                  {/* Image */}
+                  <div className="aspect-video">
+                    <BlogImagePlaceholder category={post.category} size="sm" />
                   </div>
 
                   {/* Content */}

@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 import { footerNavigation, contactInfo } from '@/data/navigation';
+import Logo from './Logo';
+import CertificationBadges from './CertificationBadges';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,13 +15,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <Image
-                src="/static/images/logo-white.png"
-                alt="S3 Recycling Solutions"
-                width={150}
-                height={58}
-                className="h-12 w-auto"
-              />
+              <Logo variant="light" className="h-10 w-auto" />
             </Link>
             <p className="text-gray-400 mb-6">
               Security. Sustainability. Stewardship.
@@ -108,36 +103,7 @@ const Footer = () => {
 
         {/* Certifications */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-            <Image
-              src="/static/images/certifications/r2-cert.png"
-              alt="R2 Certified"
-              width={80}
-              height={40}
-              className="h-10 w-auto"
-            />
-            <Image
-              src="/static/images/certifications/iso-14001.png"
-              alt="ISO 14001"
-              width={80}
-              height={40}
-              className="h-10 w-auto"
-            />
-            <Image
-              src="/static/images/certifications/iso-45001.png"
-              alt="ISO 45001"
-              width={80}
-              height={40}
-              className="h-10 w-auto"
-            />
-            <Image
-              src="/static/images/certifications/mbe.png"
-              alt="MBE Certified"
-              width={80}
-              height={40}
-              className="h-10 w-auto"
-            />
-          </div>
+          <CertificationBadges />
         </div>
       </div>
 

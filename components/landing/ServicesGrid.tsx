@@ -14,12 +14,18 @@ const iconMap: Record<string, React.ElementType> = {
   'truck': Truck,
 };
 
+const cardColors = [
+  { bg: 'group-hover:bg-green-50', icon: 'bg-green-100 group-hover:bg-green-200', iconColor: 'text-green-600' },
+  { bg: 'group-hover:bg-blue-50', icon: 'bg-blue-100 group-hover:bg-blue-200', iconColor: 'text-blue-600' },
+  { bg: 'group-hover:bg-purple-50', icon: 'bg-purple-100 group-hover:bg-purple-200', iconColor: 'text-purple-600' },
+];
+
 const ServicesGrid = () => {
   // Show first 3 services on homepage
   const featuredServices = services.slice(0, 3);
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-24 md:py-32 bg-white">
       <div className="max-w-container mx-auto px-5 md:px-10">
         {/* Section Header */}
         <motion.div
@@ -28,20 +34,21 @@ const ServicesGrid = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-primary font-medium mb-4">Our Services</span>
-          <h2 className="text-heading-lg md:text-heading-xl font-display font-medium tracking-tighter text-logis-text mb-4">
+          <span className="inline-block text-primary font-semibold mb-4 tracking-wide uppercase text-sm">Our Services</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold tracking-tight text-logis-text mb-6">
             Complete E-Waste Solutions
           </h2>
-          <p className="text-body-lg text-logis-text-secondary max-w-2xl mx-auto">
+          <p className="text-xl text-logis-text-secondary max-w-2xl mx-auto">
             From data destruction to end-of-life recycling, S3 provides comprehensive
             IT asset disposition services tailored to your business needs.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredServices.map((service, index) => {
             const Icon = iconMap[service.icon] || ShieldCheck;
+            const colors = cardColors[index % cardColors.length];
 
             return (
               <motion.div
@@ -53,25 +60,25 @@ const ServicesGrid = () => {
               >
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group block h-full bg-logis-bg hover:bg-white border border-transparent hover:border-logis-border rounded-logis-lg p-8 transition-all hover:shadow-lg"
+                  className={`group block h-full bg-gray-50 ${colors.bg} rounded-2xl p-8 transition-all duration-300 hover:shadow-xl border border-transparent hover:border-gray-200`}
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-logis bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-7 h-7 text-primary" />
+                  <div className={`w-16 h-16 rounded-2xl ${colors.icon} flex items-center justify-center mb-6 transition-colors duration-300`}>
+                    <Icon className={`w-8 h-8 ${colors.iconColor}`} />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-heading-sm font-display font-medium text-logis-text mb-3">
+                  <h3 className="text-xl md:text-2xl font-display font-semibold text-logis-text mb-3">
                     {service.shortTitle}
                   </h3>
-                  <p className="text-logis-text-secondary mb-6">
+                  <p className="text-logis-text-secondary mb-6 leading-relaxed">
                     {service.shortDescription}
                   </p>
 
                   {/* Link */}
-                  <span className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                     Learn More
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-5 h-5" />
                   </span>
                 </Link>
               </motion.div>
@@ -84,11 +91,11 @@ const ServicesGrid = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-16"
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-logis font-medium transition-colors"
+            className="inline-flex items-center gap-3 bg-logis-dark hover:bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:gap-4"
           >
             View All Services
             <ArrowRight className="w-5 h-5" />

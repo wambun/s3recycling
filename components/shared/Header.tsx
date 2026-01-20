@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Phone, ExternalLink } from 'lucide-react';
 import { mainNavigation, contactInfo } from '@/data/navigation';
+import Logo from './Logo';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,14 +46,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <Image
-                src="/static/images/logo.png"
-                alt="S3 Recycling Solutions"
-                width={150}
-                height={58}
-                className="h-12 w-auto"
-                priority
-              />
+              <Logo variant="dark" className="h-10 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
