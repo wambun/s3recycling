@@ -67,7 +67,7 @@ export default function CareersPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl">
               <span className="inline-block text-primary font-medium mb-4">
                 Join Our Team
@@ -93,7 +93,7 @@ export default function CareersPage() {
 
         {/* Why S3 */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="text-center mb-12">
               <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-4">
                 Why Work at S3?
@@ -131,7 +131,7 @@ export default function CareersPage() {
 
         {/* Culture Section */}
         <section className="py-20 md:py-28 bg-primary text-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-heading-lg font-display font-medium tracking-tighter mb-6">
@@ -181,7 +181,7 @@ export default function CareersPage() {
 
         {/* Open Positions */}
         <section id="open-positions" className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="text-center mb-12">
               <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-4">
                 Open Positions

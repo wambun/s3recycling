@@ -77,7 +77,7 @@ export default async function ServicePage({
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             {/* Breadcrumb */}
             <Link
               href="/services"
@@ -142,7 +142,7 @@ export default async function ServicePage({
 
         {/* Details Section */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-6">
                 Why Choose S3 for {service.shortTitle}?
@@ -202,7 +202,7 @@ export default async function ServicePage({
 
         {/* Related Services */}
         <section className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-10 text-center">
               Related Services
             </h2>
@@ -239,7 +239,7 @@ export default async function ServicePage({
 
         {/* CTA Section */}
         <section className="py-20 md:py-28 bg-primary">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-lg md:text-heading-xl font-display font-medium tracking-tighter text-white mb-6">
               Ready to Get Started?
             </h2>

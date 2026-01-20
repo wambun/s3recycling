@@ -27,7 +27,7 @@ export default function ServicesPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl">
               <span className="inline-block text-primary font-medium mb-4">
                 Our Solutions
@@ -46,7 +46,7 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service) => {
                 const Icon = iconMap[service.icon] || ShieldCheck;
@@ -97,7 +97,7 @@ export default function ServicesPage() {
 
         {/* CTA Section */}
         <section className="py-20 md:py-28 bg-primary">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-lg md:text-heading-xl font-display font-medium tracking-tighter text-white mb-6">
               Not Sure Which Service You Need?
             </h2>

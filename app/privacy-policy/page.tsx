@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl">
               <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
                 Privacy Policy
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
 
         {/* Content */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl mx-auto prose prose-lg prose-gray">
               <h2>Introduction</h2>
               <p>
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
 
         {/* CTA */}
         <section className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-md font-display font-medium tracking-tighter text-logis-text mb-4">
               Have Questions?
             </h2>

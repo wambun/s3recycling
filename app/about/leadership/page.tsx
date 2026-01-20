@@ -18,7 +18,7 @@ export default function LeadershipPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <Link
               href="/about"
               className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
@@ -44,7 +44,7 @@ export default function LeadershipPage() {
 
         {/* Team Grid */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {leadershipTeam.map((member) => (
                 <div
@@ -92,7 +92,7 @@ export default function LeadershipPage() {
 
         {/* Join Our Team CTA */}
         <section className="py-20 md:py-28 bg-primary">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-lg font-display font-medium tracking-tighter text-white mb-6">
               Join Our Team
             </h2>

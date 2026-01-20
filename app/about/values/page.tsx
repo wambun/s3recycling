@@ -27,7 +27,7 @@ export default function ValuesPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <Link
               href="/about"
               className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
@@ -54,7 +54,7 @@ export default function ValuesPage() {
 
         {/* Core Values - Large */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Security */}
               <div className="bg-gradient-to-br from-primary to-primary-700 rounded-logis-xl p-8 text-white">
@@ -105,7 +105,7 @@ export default function ValuesPage() {
 
         {/* Additional Values */}
         <section className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="text-center mb-12">
               <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-4">
                 Guiding Principles
@@ -143,7 +143,7 @@ export default function ValuesPage() {
 
         {/* Quote Section */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl mx-auto text-center">
               <blockquote className="text-2xl md:text-3xl font-display text-logis-text leading-relaxed mb-6">
                 &ldquo;Our greatest responsibility is to care for our team members and
@@ -159,7 +159,7 @@ export default function ValuesPage() {
 
         {/* CTA */}
         <section className="py-20 md:py-28 bg-primary">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-lg font-display font-medium tracking-tighter text-white mb-6">
               Experience Our Values in Action
             </h2>

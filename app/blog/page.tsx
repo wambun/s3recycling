@@ -31,7 +31,7 @@ export default function BlogPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl">
               <span className="inline-block text-primary font-medium mb-4">
                 News & Updates
@@ -49,7 +49,7 @@ export default function BlogPage() {
 
         {/* Featured Post */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <Link
               href={`/blog/${featuredPost.slug}`}
               className="group block bg-logis-bg rounded-logis-lg overflow-hidden hover:shadow-lg transition-all"
@@ -93,7 +93,7 @@ export default function BlogPage() {
 
         {/* Other Posts */}
         <section className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-10">
               More News
             </h2>
@@ -136,7 +136,7 @@ export default function BlogPage() {
 
         {/* Newsletter CTA */}
         <section className="py-20 md:py-28 bg-primary">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-lg font-display font-medium tracking-tighter text-white mb-6">
               Stay Updated
             </h2>

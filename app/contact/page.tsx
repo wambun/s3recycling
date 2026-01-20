@@ -18,7 +18,7 @@ export default function ContactPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl">
               <span className="inline-block text-primary font-medium mb-4">
                 Get In Touch
@@ -37,7 +37,7 @@ export default function ContactPage() {
 
         {/* Contact Section */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid lg:grid-cols-3 gap-12">
               {/* Contact Info */}
               <div className="lg:col-span-1">
@@ -138,7 +138,7 @@ export default function ContactPage() {
 
         {/* Map Section (Placeholder) */}
         <section className="bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10 py-20">
+          <div className="w-full px-6 md:px-12 lg:px-20 py-20">
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-logis-lg h-80 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />

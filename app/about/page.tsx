@@ -33,7 +33,7 @@ export default function AboutPage() {
       <main>
         {/* Hero Section */}
         <section className="bg-logis-bg py-20 md:py-28">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="inline-block text-primary font-medium mb-4">
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
         {/* Mission Section */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-heading-lg md:text-heading-xl font-display font-medium tracking-tighter text-logis-text mb-6">
                 Our Mission
@@ -135,7 +135,7 @@ export default function AboutPage() {
 
         {/* Certifications */}
         <section className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="text-center mb-12">
               <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-4">
                 Certifications & Accreditations
@@ -169,7 +169,7 @@ export default function AboutPage() {
 
         {/* Timeline */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="text-center mb-12">
               <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-4">
                 Our Journey
@@ -220,7 +220,7 @@ export default function AboutPage() {
 
         {/* Community Section */}
         <section className="py-20 md:py-28 bg-primary text-white">
-          <div className="max-w-container mx-auto px-5 md:px-10">
+          <div className="w-full px-6 md:px-12 lg:px-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
@@ -265,7 +265,7 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section className="py-20 md:py-28 bg-logis-bg">
-          <div className="max-w-container mx-auto px-5 md:px-10 text-center">
+          <div className="w-full px-6 md:px-12 lg:px-20 text-center">
             <h2 className="text-heading-lg font-display font-medium tracking-tighter text-logis-text mb-6">
               Ready to Partner with S3?
             </h2>
