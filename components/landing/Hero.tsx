@@ -4,6 +4,45 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, Phone, Shield, Leaf, Award, Recycle, CheckCircle } from 'lucide-react';
 
+const orbitingCards = [
+  {
+    id: 'satisfaction',
+    icon: CheckCircle,
+    iconBg: 'bg-green-100',
+    iconColor: 'text-green-600',
+    value: '100%',
+    label: 'Satisfaction Rate',
+    angle: 315, // Top-left position
+  },
+  {
+    id: 'landfill',
+    icon: Shield,
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    value: '0%',
+    label: 'Landfill Rate',
+    angle: 45, // Top-right position
+  },
+  {
+    id: 'reuse',
+    icon: Leaf,
+    iconBg: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+    value: '95%',
+    label: 'Reuse Rate',
+    angle: 135, // Bottom-right position
+  },
+  {
+    id: 'states',
+    icon: Award,
+    iconBg: 'bg-amber-100',
+    iconColor: 'text-amber-600',
+    value: '30+',
+    label: 'States Served',
+    angle: 225, // Bottom-left position
+  },
+];
+
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-logis-bg via-white to-logis-bg overflow-hidden min-h-[90vh] flex items-center">
@@ -123,7 +162,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Hero Visual */}
+          {/* Hero Visual with Orbiting Cards */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -135,7 +174,7 @@ const Hero = () => {
               {/* Background Circle */}
               <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10" />
 
-              {/* Central Icon */}
+              {/* Central Icon - spins clockwise */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -146,79 +185,92 @@ const Hero = () => {
                     <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="0.5" fill="none" strokeDasharray="4 4" />
                   </svg>
                 </motion.div>
-                <div className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary to-primary-700 flex items-center justify-center shadow-2xl shadow-primary/30">
+                <motion.div
+                  className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary to-primary-700 flex items-center justify-center shadow-2xl shadow-primary/30"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                >
                   <Recycle className="w-12 h-12 md:w-16 md:h-16 text-white" />
-                </div>
+                </motion.div>
               </div>
 
-              {/* Floating Cards */}
+              {/* Orbiting Cards Container - rotates clockwise */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="absolute top-4 -left-4 md:top-8 md:-left-8 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
+                className="absolute inset-0"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 60,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-logis-text">100%</p>
-                    <p className="text-xs text-logis-text-secondary">Satisfaction Rate</p>
-                  </div>
-                </div>
+                {orbitingCards.map((card, index) => {
+                  const Icon = card.icon;
+                  // Calculate position on the orbit
+                  const radius = 48; // percentage from center
+                  const angleRad = (card.angle * Math.PI) / 180;
+                  const x = 50 + radius * Math.cos(angleRad);
+                  const y = 50 + radius * Math.sin(angleRad);
+
+                  return (
+                    <motion.div
+                      key={card.id}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        rotate: -360, // Counter-rotate to keep cards upright
+                      }}
+                      transition={{
+                        opacity: { delay: 0.6 + index * 0.2, duration: 0.5 },
+                        scale: {
+                          delay: 0.6 + index * 0.2,
+                          duration: 0.5,
+                          type: 'spring',
+                          stiffness: 200,
+                          damping: 15,
+                        },
+                        rotate: {
+                          duration: 60,
+                          repeat: Infinity,
+                          ease: 'linear',
+                        },
+                      }}
+                      className="absolute bg-white rounded-2xl p-3 md:p-4 shadow-xl border border-gray-100"
+                      style={{
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        transform: 'translate(-50%, -50%)',
+                      }}
+                    >
+                      <div className="flex items-center gap-2 md:gap-3">
+                        <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl ${card.iconBg} flex items-center justify-center`}>
+                          <Icon className={`w-5 h-5 md:w-6 md:h-6 ${card.iconColor}`} />
+                        </div>
+                        <div>
+                          <p className="text-xl md:text-2xl font-bold text-logis-text">{card.value}</p>
+                          <p className="text-[10px] md:text-xs text-logis-text-secondary whitespace-nowrap">{card.label}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="absolute top-1/4 -right-4 md:-right-8 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-logis-text">0%</p>
-                    <p className="text-xs text-logis-text-secondary">Landfill Rate</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.6 }}
-                className="absolute bottom-8 left-0 md:bottom-12 md:-left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-logis-text">30+</p>
-                    <p className="text-xs text-logis-text-secondary">States Served</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute bottom-4 right-0 md:bottom-8 md:right-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <Leaf className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-logis-text">95%</p>
-                    <p className="text-xs text-logis-text-secondary">Reuse Rate</p>
-                  </div>
-                </div>
-              </motion.div>
+              {/* Orbit path visualization (subtle) */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="48"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.2"
+                  strokeDasharray="2 2"
+                  className="text-primary/10"
+                />
+              </svg>
             </div>
           </motion.div>
         </div>
