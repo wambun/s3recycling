@@ -30,9 +30,9 @@ const Header = () => {
     >
       <div className="w-full px-6 md:px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - 1.5x size */}
           <Link href="/" className="flex items-center">
-            <Logo variant="dark" className="h-10 w-auto" />
+            <Logo variant="dark" className="h-[60px] w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

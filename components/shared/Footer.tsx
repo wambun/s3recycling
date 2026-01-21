@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <Logo variant="light" className="h-10 w-auto" />
+              <Logo variant="light" className="h-[60px] w-auto" />
             </Link>
             <p className="text-gray-400 mb-6">
               Security. Sustainability. Stewardship.
