@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Linkedin, Mail } from 'lucide-react';
 import { leadershipTeam } from '@/data/team';
@@ -17,30 +18,28 @@ export default function LeadershipPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to About
-            </Link>
+        <PageHero>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to About
+          </Link>
 
-            <div className="max-w-3xl">
-              <span className="inline-block text-primary font-medium mb-4">
-                Our Team
-              </span>
-              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                Leadership
-              </h1>
-              <p className="text-body-lg text-logis-text-secondary">
-                Meet the experienced professionals who guide S3&apos;s mission to provide
-                sustainable, secure e-waste solutions for businesses across America.
-              </p>
-            </div>
+          <div className="max-w-3xl">
+            <span className="inline-block text-primary font-medium mb-4">
+              Our Team
+            </span>
+            <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+              Leadership
+            </h1>
+            <p className="text-body-lg text-logis-text-secondary">
+              Meet the experienced professionals who guide S3&apos;s mission to provide
+              sustainable, secure e-waste solutions for businesses across America.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Team Grid */}
         <section className="py-20 md:py-28 bg-white">

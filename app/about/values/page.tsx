@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Shield, Leaf, Heart, CheckCircle, Users, Star } from 'lucide-react';
 import { companyValues } from '@/data/team';
@@ -26,31 +27,29 @@ export default function ValuesPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to About
-            </Link>
+        <PageHero>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to About
+          </Link>
 
-            <div className="max-w-3xl">
-              <span className="inline-block text-primary font-medium mb-4">
-                What We Believe
-              </span>
-              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                Our Values
-              </h1>
-              <p className="text-body-lg text-logis-text-secondary">
-                At S3, our values guide everything we do. Security, Sustainability,
-                and Stewardship aren&apos;t just words in our name—they&apos;re the principles
-                that shape our approach to e-waste recycling.
-              </p>
-            </div>
+          <div className="max-w-3xl">
+            <span className="inline-block text-primary font-medium mb-4">
+              What We Believe
+            </span>
+            <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+              Our Values
+            </h1>
+            <p className="text-body-lg text-logis-text-secondary">
+              At S3, our values guide everything we do. Security, Sustainability,
+              and Stewardship aren&apos;t just words in our name—they&apos;re the principles
+              that shape our approach to e-waste recycling.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Core Values - Large */}
         <section className="py-20 md:py-28 bg-white">

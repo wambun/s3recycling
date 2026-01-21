@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck, Server, Recycle, Building, HeartPulse, Truck } from 'lucide-react';
 import { services } from '@/data/services';
@@ -26,23 +27,21 @@ export default function ServicesPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <div className="max-w-3xl">
-              <span className="inline-block text-primary font-medium mb-4">
-                Our Solutions
-              </span>
-              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                Complete E-Waste Solutions
-              </h1>
-              <p className="text-body-lg text-logis-text-secondary">
-                S3&apos;s comprehensive electronics recycling services help businesses
-                responsibly manage their IT assets. From secure data destruction to
-                sustainable end-of-life recycling, we handle the entire process.
-              </p>
-            </div>
+        <PageHero>
+          <div className="max-w-3xl">
+            <span className="inline-block text-primary font-medium mb-4">
+              Our Solutions
+            </span>
+            <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+              Complete E-Waste Solutions
+            </h1>
+            <p className="text-body-lg text-logis-text-secondary">
+              S3&apos;s comprehensive electronics recycling services help businesses
+              responsibly manage their IT assets. From secure data destruction to
+              sustainable end-of-life recycling, we handle the entire process.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Services Grid */}
         <section className="py-20 md:py-28 bg-white">

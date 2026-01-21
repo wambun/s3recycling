@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import { ArrowRight, Users, Heart, Leaf, Award, MapPin, Clock } from 'lucide-react';
 
@@ -66,30 +67,28 @@ export default function CareersPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <div className="max-w-3xl">
-              <span className="inline-block text-primary font-medium mb-4">
-                Join Our Team
-              </span>
-              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                Careers at S3
-              </h1>
-              <p className="text-body-lg text-logis-text-secondary mb-8">
-                Join a team that&apos;s making a difference. At S3, we&apos;re committed to
-                creating a sustainable future while building rewarding careers for
-                our team members.
-              </p>
-              <a
-                href="#open-positions"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-logis font-medium transition-colors"
-              >
-                View Open Positions
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
+        <PageHero>
+          <div className="max-w-3xl">
+            <span className="inline-block text-primary font-medium mb-4">
+              Join Our Team
+            </span>
+            <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+              Careers at S3
+            </h1>
+            <p className="text-body-lg text-logis-text-secondary mb-8">
+              Join a team that&apos;s making a difference. At S3, we&apos;re committed to
+              creating a sustainable future while building rewarding careers for
+              our team members.
+            </p>
+            <a
+              href="#open-positions"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-logis font-medium transition-colors"
+            >
+              View Open Positions
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
-        </section>
+        </PageHero>
 
         {/* Why S3 */}
         <section className="py-20 md:py-28 bg-white">

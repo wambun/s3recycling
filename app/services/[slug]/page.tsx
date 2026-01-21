@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -76,69 +77,67 @@ export default async function ServicePage({
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            {/* Breadcrumb */}
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Services
-            </Link>
+        <PageHero>
+          {/* Breadcrumb */}
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-logis-text-secondary hover:text-primary mb-8 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Services
+          </Link>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                {/* Icon */}
-                <div className="w-20 h-20 rounded-logis-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <Icon className="w-10 h-10 text-primary" />
-                </div>
-
-                <h1 className="text-display-sm md:text-display-md font-display font-medium tracking-tighter text-logis-text mb-6">
-                  {service.title}
-                </h1>
-                <p className="text-body-lg text-logis-text-secondary mb-8">
-                  {service.description}
-                </p>
-
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/pickup-request"
-                    className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-logis font-medium transition-colors"
-                  >
-                    {service.ctaText}
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <a
-                    href="tel:8889707377"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-logis-border hover:border-primary text-logis-text px-8 py-4 rounded-logis font-medium transition-colors"
-                  >
-                    <Phone className="w-5 h-5" />
-                    888-970-S3RS
-                  </a>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              {/* Icon */}
+              <div className="w-20 h-20 rounded-logis-lg bg-primary/10 flex items-center justify-center mb-6">
+                <Icon className="w-10 h-10 text-primary" />
               </div>
 
-              {/* Features Card */}
-              <div className="bg-white rounded-logis-lg p-8 border border-logis-border">
-                <h2 className="text-heading-sm font-display font-medium text-logis-text mb-6">
-                  What&apos;s Included
-                </h2>
-                <ul className="space-y-4">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-4 h-4 text-primary" />
-                      </div>
-                      <span className="text-logis-text">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <h1 className="text-display-sm md:text-display-md font-display font-medium tracking-tighter text-logis-text mb-6">
+                {service.title}
+              </h1>
+              <p className="text-body-lg text-logis-text-secondary mb-8">
+                {service.description}
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/pickup-request"
+                  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-logis font-medium transition-colors"
+                >
+                  {service.ctaText}
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a
+                  href="tel:8889707377"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-logis-border hover:border-primary text-logis-text px-8 py-4 rounded-logis font-medium transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  888-970-S3RS
+                </a>
               </div>
             </div>
+
+            {/* Features Card */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-logis-lg p-8 border border-white/50 shadow-lg">
+              <h2 className="text-heading-sm font-display font-medium text-logis-text mb-6">
+                What&apos;s Included
+              </h2>
+              <ul className="space-y-4">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-logis-text">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </section>
+        </PageHero>
 
         {/* Details Section */}
         <section className="py-20 md:py-28 bg-white">

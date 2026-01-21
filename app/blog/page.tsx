@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { blogPosts } from '@/data/blog';
@@ -30,22 +31,20 @@ export default function BlogPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <div className="max-w-3xl">
-              <span className="inline-block text-primary font-medium mb-4">
-                News & Updates
-              </span>
-              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                Latest News
-              </h1>
-              <p className="text-body-lg text-logis-text-secondary">
-                Stay updated with the latest news, awards, and insights from S3
-                Recycling Solutions.
-              </p>
-            </div>
+        <PageHero>
+          <div className="max-w-3xl">
+            <span className="inline-block text-primary font-medium mb-4">
+              News & Updates
+            </span>
+            <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+              Latest News
+            </h1>
+            <p className="text-body-lg text-logis-text-secondary">
+              Stay updated with the latest news, awards, and insights from S3
+              Recycling Solutions.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Featured Post */}
         <section className="py-20 md:py-28 bg-white">

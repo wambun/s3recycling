@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import PickupRequestForm from '@/components/forms/PickupRequestForm';
 import { Phone, CheckCircle } from 'lucide-react';
 import { contactInfo } from '@/data/navigation';
@@ -26,23 +27,21 @@ export default function PickupRequestPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <div className="max-w-3xl">
-              <span className="inline-block text-primary font-medium mb-4">
-                Get Started
-              </span>
-              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                Request a Pickup
-              </h1>
-              <p className="text-body-lg text-logis-text-secondary">
-                Fill out the form below and our team will contact you to schedule
-                a convenient pickup time. We handle all the heavy lifting—literally
-                and figuratively.
-              </p>
-            </div>
+        <PageHero>
+          <div className="max-w-3xl">
+            <span className="inline-block text-primary font-medium mb-4">
+              Get Started
+            </span>
+            <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+              Request a Pickup
+            </h1>
+            <p className="text-body-lg text-logis-text-secondary">
+              Fill out the form below and our team will contact you to schedule
+              a convenient pickup time. We handle all the heavy lifting—literally
+              and figuratively.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Form Section */}
         <section className="py-20 md:py-28 bg-white">

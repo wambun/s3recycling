@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import PageHero from '@/components/shared/PageHero';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Shield, Leaf, Award, Users, MapPin, Calendar } from 'lucide-react';
@@ -32,88 +33,86 @@ export default function AboutPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-logis-bg py-20 md:py-28">
-          <div className="w-full px-6 md:px-12 lg:px-20">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-block text-primary font-medium mb-4">
-                  About S3
-                </span>
-                <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
-                  Who We Are
-                </h1>
-                <p className="text-body-lg text-logis-text-secondary mb-6">
-                  Headquartered in Springfield, Tennessee, S3 Recycling Solutions&apos;
-                  vision is to combat our planet&apos;s e-waste epidemic by employing
-                  both environmentally and financially responsible processes for a
-                  stronger, safer global community.
-                </p>
-                <p className="text-body-lg text-logis-text-secondary mb-8">
-                  We help our customers reduce the cost of ownership of their
-                  electronic technology assets, while providing peace of mind that
-                  data security is maintained at the highest industry standards.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    href="/about/leadership"
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-logis font-medium transition-colors"
-                  >
-                    Meet Our Team
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    href="/about/values"
-                    className="inline-flex items-center gap-2 border-2 border-logis-border hover:border-primary text-logis-text px-6 py-3 rounded-logis font-medium transition-colors"
-                  >
-                    Our Values
-                  </Link>
-                </div>
+        <PageHero>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block text-primary font-medium mb-4">
+                About S3
+              </span>
+              <h1 className="text-display-md md:text-display-lg font-display font-medium tracking-tighter text-logis-text mb-6">
+                Who We Are
+              </h1>
+              <p className="text-body-lg text-logis-text-secondary mb-6">
+                Headquartered in Springfield, Tennessee, S3 Recycling Solutions&apos;
+                vision is to combat our planet&apos;s e-waste epidemic by employing
+                both environmentally and financially responsible processes for a
+                stronger, safer global community.
+              </p>
+              <p className="text-body-lg text-logis-text-secondary mb-8">
+                We help our customers reduce the cost of ownership of their
+                electronic technology assets, while providing peace of mind that
+                data security is maintained at the highest industry standards.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/about/leadership"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-logis font-medium transition-colors"
+                >
+                  Meet Our Team
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/about/values"
+                  className="inline-flex items-center gap-2 border-2 border-logis-border hover:border-primary text-logis-text px-6 py-3 rounded-logis font-medium transition-colors"
+                >
+                  Our Values
+                </Link>
               </div>
+            </div>
 
-              {/* Stats Card */}
-              <div className="bg-white rounded-logis-lg p-8 border border-logis-border">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Calendar className="w-6 h-6 text-primary" />
-                    </div>
-                    <p className="text-3xl font-display font-bold text-logis-text">
-                      2007
-                    </p>
-                    <p className="text-sm text-logis-text-secondary">Founded</p>
+            {/* Stats Card */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-logis-lg p-8 border border-white/50 shadow-lg">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-primary" />
-                    </div>
-                    <p className="text-3xl font-display font-bold text-logis-text">
-                      30+
-                    </p>
-                    <p className="text-sm text-logis-text-secondary">States Served</p>
+                  <p className="text-3xl font-display font-bold text-logis-text">
+                    2007
+                  </p>
+                  <p className="text-sm text-logis-text-secondary">Founded</p>
+                </div>
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Leaf className="w-6 h-6 text-primary" />
-                    </div>
-                    <p className="text-3xl font-display font-bold text-logis-text">
-                      95%
-                    </p>
-                    <p className="text-sm text-logis-text-secondary">Reuse Rate</p>
+                  <p className="text-3xl font-display font-bold text-logis-text">
+                    30+
+                  </p>
+                  <p className="text-sm text-logis-text-secondary">States Served</p>
+                </div>
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Leaf className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-center p-4">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-primary" />
-                    </div>
-                    <p className="text-3xl font-display font-bold text-logis-text">
-                      0%
-                    </p>
-                    <p className="text-sm text-logis-text-secondary">Landfill</p>
+                  <p className="text-3xl font-display font-bold text-logis-text">
+                    95%
+                  </p>
+                  <p className="text-sm text-logis-text-secondary">Reuse Rate</p>
+                </div>
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
+                  <p className="text-3xl font-display font-bold text-logis-text">
+                    0%
+                  </p>
+                  <p className="text-sm text-logis-text-secondary">Landfill</p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </PageHero>
 
         {/* Mission Section */}
         <section className="py-20 md:py-28 bg-white">
