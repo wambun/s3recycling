@@ -139,7 +139,7 @@ export default function RootLayout({
 
           <div className="w-full flex flex-col justify-between items-center font-sans">
             <SearchProvider>
-              <main className="w-full flex flex-col items-center mb-auto">
+              <main className="w-full flex flex-col items-center mb-auto pt-20">
                 {children}
               </main>
             </SearchProvider>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
@@ -10,9 +10,24 @@ import Logo from './Logo';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/70 backdrop-blur-xl shadow-sm'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="w-full px-6 md:px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -51,12 +66,12 @@ const Header = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 pt-2 w-64"
                     >
-                      <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+                      <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-xl border border-white/20 py-2">
                         {item.children.map((child) => (
                           <Link
                             key={child.label}
                             href={child.href}
-                            className="block px-5 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                            className="block px-5 py-3 text-gray-700 hover:bg-white/50 hover:text-primary transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -80,7 +95,7 @@ const Header = () => {
             </a>
             <Link
               href="/pickup-request"
-              className="bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+              className="bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors shadow-lg shadow-primary/20"
             >
               Request Pickup
             </Link>
@@ -88,7 +103,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 text-gray-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -108,11 +123,11 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-gray-100 bg-white"
+            className="lg:hidden bg-white/90 backdrop-blur-xl"
           >
             <nav className="px-6 py-6">
               {mainNavigation.map((item) => (
-                <div key={item.label} className="border-b border-gray-100 last:border-0">
+                <div key={item.label} className="border-b border-gray-100/50 last:border-0">
                   <Link
                     href={item.href}
                     className="block py-4 text-gray-800 font-medium"
