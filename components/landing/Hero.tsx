@@ -200,7 +200,7 @@ const Hero = () => {
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 360 }}
                 transition={{
-                  duration: 60,
+                  duration: 30,
                   repeat: Infinity,
                   ease: 'linear',
                 }}
@@ -232,7 +232,7 @@ const Hero = () => {
                           damping: 15,
                         },
                         rotate: {
-                          duration: 60,
+                          duration: 30,
                           repeat: Infinity,
                           ease: 'linear',
                         },
