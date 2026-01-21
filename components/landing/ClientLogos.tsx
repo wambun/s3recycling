@@ -44,10 +44,10 @@ const ClientLogos = () => {
                 transition={{ delay: index * 0.05 }}
                 className="flex flex-col items-center text-center p-4"
               >
-                <div className="w-14 h-14 rounded-full bg-logis-bg flex items-center justify-center mb-3">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className="w-16 h-16 rounded-full bg-logis-bg flex items-center justify-center mb-4">
+                  <Icon className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-sm text-logis-text-secondary font-medium">
+                <p className="text-base text-logis-text font-medium">
                   {client.label}
                 </p>
               </motion.div>
