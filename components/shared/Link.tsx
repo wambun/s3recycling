@@ -1,21 +1,36 @@
 import NextLink from 'next/link';
-import { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
 
-const Link = ({ href, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => {
-    const isInternalLink = href && href.startsWith('/');
-    const isAnchorLink = href && href.startsWith('#');
+interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
+  children: ReactNode;
+}
 
-    if (isInternalLink) {
-        return (
-            <NextLink href={href} {...rest} />
-        );
-    }
+const Link = ({ href, children, ...rest }: LinkProps) => {
+  const isInternalLink = href && href.startsWith('/');
+  const isAnchorLink = href && href.startsWith('#');
 
-    if (isAnchorLink) {
-        return <a href={href} {...rest} />;
-    }
+  if (isInternalLink) {
+    return (
+      <NextLink href={href} {...rest}>
+        {children}
+      </NextLink>
+    );
+  }
 
-    return <a target="_blank" rel="noopener noreferrer" href={href} {...rest} />;
+  if (isAnchorLink) {
+    return (
+      <a href={href} {...rest}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
+      {children}
+    </a>
+  );
 };
 
 export default Link;

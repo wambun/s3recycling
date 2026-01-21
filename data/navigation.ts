@@ -57,7 +57,11 @@ export const footerNavigation = {
     { label: 'Client Portal', href: 'https://s3erpportal.makor-erp.com/portal' },
     { label: 'Request Pickup', href: '/pickup-request' },
     { label: 'Donation Request', href: '/donation-request' },
+  ],
+  legal: [
     { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms of Service', href: '/terms-of-service' },
+    { label: 'Cookie Policy', href: '/cookie-policy' },
   ],
 };
 

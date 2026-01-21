@@ -114,13 +114,16 @@ const Footer = () => {
             <p className="text-gray-500 text-sm">
               &copy; {currentYear} S3 Recycling Solutions. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <Link
-                href="/privacy-policy"
-                className="text-gray-500 hover:text-white text-sm transition-colors"
-              >
-                Privacy Policy
-              </Link>
+            <div className="flex items-center gap-6 flex-wrap justify-center">
+              {footerNavigation.legal.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-gray-500 hover:text-white text-sm transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
                 href="/contact"
                 className="text-gray-500 hover:text-white text-sm transition-colors"

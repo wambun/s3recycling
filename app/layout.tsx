@@ -8,6 +8,7 @@ import { colors } from '@/data/config/colors.js';
 import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
 import { AnalyticsWrapper } from '@/components/shared/Analytics';
+import { SchemaMarkup } from '@/components/shared/SchemaMarkup';
 
 // Primary display font - Urbanist (from Logis template)
 const displayFont = Urbanist({
@@ -136,6 +137,7 @@ export default function RootLayout({
       <body className="flex flex-col bg-logis-bg text-logis-text antialiased dark:bg-logis-dark dark:text-white min-h-screen">
         <ThemeProviders>
           <AnalyticsWrapper />
+          <SchemaMarkup />
 
           <div className="w-full flex flex-col justify-between items-center font-sans">
             <SearchProvider>

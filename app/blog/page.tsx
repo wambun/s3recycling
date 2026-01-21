@@ -144,9 +144,15 @@ export default function BlogPage() {
               from S3 Recycling Solutions.
             </p>
             <form className="max-w-md mx-auto flex gap-3">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email address
+              </label>
               <input
                 type="email"
+                id="newsletter-email"
+                name="email"
                 placeholder="Enter your email"
+                aria-label="Email address for newsletter subscription"
                 className="flex-1 px-4 py-3 rounded-logis bg-white/10 border border-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
               <button
